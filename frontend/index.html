@@ -9,44 +9,118 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="nav">
-            <span class="nav-label">Dashboard</span>
-        </div>
+    <div class="grid-container">
         <div class="sidebar">
-            <img class="logo" src="../icon/boostChanger.png" alt="">
-            <ul class="slider-ul">
-                <li class="active"><a href="#"><img class="icons" src="../icon/tachometer.png"><span
-                            class="slider-label">Dashboard</span></a></li>
-                <li><a href="cpu_settings.html"><img class="icons" src="../icon/zahnrad.png"><span
-                            class="slider-label">CPU
-                            Settings</span></a></li>
-            </ul>
-            <div>
-                <button class="btn" id="close">Close</button>
+            <div class="sideLogo">
+                <img class="logo" src="../icon/boostChanger.png" alt="">
+            </div>
+            <div class="sideMenu">
+                <ul>
+                    <li class="active"><a href="#"><img class="icons" src="../icon/icons8-armaturenbrett-64.png"></a>
+                    </li>
+                    <li><a href="cpu_settings.html"><img class="icons" src="../icon/icons8-zahnrad-64.png"></a></li>
+                </ul>
             </div>
 
-        </div>
-        <div class="main-dashboard">
-            <div class="infos">
-                <p>OS Name:</p>
-                <p>Kernel:</p>
-                <p>Up time:</p>
-                <p>CPU:</p>
-                <p>Total Memory:</p>
-                <p>Local IP:</p>
-                <p>Public IP:</p>
-            </div>
-            <div class="infos-result">
-                <p id="os_name"></p>
-                <p id="kernel"></p>
-                <p id="up_time"></p>
-                <p id="cpu_name"></p>
-                <p id="mem_total"></p>
-                <p id="local_ip"></p>
-                <p id="public_ip"></p>
+            <div class="SideClose">
+                <div class="CloseBtn">
+                    <button class="btn" id="close">Close</button>
+                </div>
             </div>
         </div>
+        <div class="header">
+            <div class="headerLabelLeft">
+                <span class="nav-label">Dashboard</span>
+            </div>
+            <div class="headerLabelRight"></div>
+        </div>
+        <div class="mainContainer">
+            <div class="card">
+                <div class="card-container">
+                    <div class="icon-card">
+                        <img class="icons-mainContainer" src="../icon/icons8-systeminformation-64.png" alt="">
+                    </div>
+                    <div class="card-info">
+                        <div>
+                            <p id="os_name"></p>
+                            <p id="kernel"></p>
+                            <p id="up_time">h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-container">
+                    <div class="icon-card">
+                        <img class="icons-mainContainer" src="../icon/icons8-smartphone-cpu-64.png" alt="">
+                    </div>
+                    <div class="card-info">
+                        <div>
+                            <p id="cpu_vendor"></p>
+                            <p id="cpu_name"></p>
+                            <p id="cpu_core"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-container">
+                    <div class="icon-card">
+                        <h4><b>Memory</b></h4>
+                    </div>
+                    <div class="card-info">
+                        <div>
+                            <p>Manufacturerhhhhhhhhhhhhh</p>
+                            <p>Manufacturerhhhhhhhhhhhhh</p>
+                            <p>Manufacturerhhhhhhhhhhhhh</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-container">
+                    <div class="icon-card">
+                        <h4><b>Battery</b></h4>
+                    </div>
+                    <div class="card-info">
+                        <div>
+                            <p>Manufacturerhhhhhhhhhhhhh</p>
+                            <p>Manufacturerhhhhhhhhhhhhh</p>
+                            <p>Manufacturerhhhhhhhhhhhhh</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-container">
+                    <div class="icon-card">
+                        <h4><b>GPU</b></h4>
+                    </div>
+                    <div class="card-info">
+                        <div>
+                            <p>Manufacturerhhhhhhhhhhhhh</p>
+                            <p>Manufacturerhhhhhhhhhhhhh</p>
+                            <p>Manufacturerhhhhhhhhhhhhh</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-container">
+                    <div class="icon-card">
+                        <h4><b>Network</b></h4>
+                    </div>
+                    <div class="card-info">
+                        <div>
+                            <p>Manufacturerhhhhhhhhhhhhh</p>
+                            <p>Manufacturerhhhhhhhhhhhhh</p>
+                            <p>Manufacturerhhhhhhhhhhhhh</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <!-- You can also require other files to run in this process -->
     <script>

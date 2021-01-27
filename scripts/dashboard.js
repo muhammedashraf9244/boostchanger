@@ -50,6 +50,28 @@ if (localStorage.getItem("cpu_name")) {
   })
 }
 
+// cpu core
+if (localStorage.getItem("cpu_core")) {
+  document.getElementById("cpu_core").innerHTML = localStorage.getItem("cpu_core")
+} else {
+  sys_info.cpu().then((cpu_core) => {
+    var cpuCore = "Physical Cores: "+ cpu_core.physicalCores
+    localStorage.setItem("cpu_core", cpuCore)
+    document.getElementById("cpu_core").innerHTML = localStorage.getItem("cpu_core")
+  })
+}
+
+// cpu core
+if (localStorage.getItem("cpu_vendor")) {
+  document.getElementById("cpu_vendor").innerHTML = localStorage.getItem("cpu_vendor")
+} else {
+  sys_info.cpu().then((cpu_vendor) => {
+    var cpuVendor = cpu_vendor.vendor
+    localStorage.setItem("cpu_vendor", cpuVendor)
+    document.getElementById("cpu_vendor").innerHTML = localStorage.getItem("cpu_vendor")
+  })
+}
+
 // Total memory
 if (localStorage.getItem("mem_total")) {
   document.getElementById("mem_total").innerHTML = localStorage.getItem("mem_total")

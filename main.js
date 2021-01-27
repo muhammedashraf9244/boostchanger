@@ -88,11 +88,11 @@ function createWindow() {
 
   // Create the main window.
   mainWindow = new BrowserWindow({
-    width: 850,
-    height: 500,
+    width: 950,
+    height: 550,
     x: windowStateKeeper().x,
     y: windowStateKeeper().y,
-    resizable: false, //TODO for DEV
+    //resizable: false, //TODO for DEV
     title: 'Boost Changer',
     webPreferences: {
       nodeIntegration: true,
@@ -117,7 +117,7 @@ function createWindow() {
   mainWindow.once('ready-to-show', mainWindow.show)
 
   // TODO: for DEV Open the DevTools. 
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   // clear all local storage data before app starts
   mainWindow.webContents.session.clearStorageData()
@@ -136,25 +136,25 @@ function createWindow() {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-// // TODO: for DEV
-// app.on('ready', () => {
-//   // call trayApp function
-//   trayApp()
-//   createWindow()
-// })
-// // TODO: Till here
-
-//TODO: for production
+// TODO: for DEV
 app.on('ready', () => {
-  //show error when the user uses VM 
-  if (fs.existsSync('/sys/devices/system/cpu/intel_pstate/no_turbo')) {
-    createWindow()
-    // call trayApp function
-    trayApp()
-  } else {
-    errorDialog()
-  }
-}) //TODO: Till here
+  // call trayApp function
+  trayApp()
+  createWindow()
+})
+// TODO: Till here
+
+// //TODO: for production
+// app.on('ready', () => {
+//   //show error when the user uses VM 
+//   if (fs.existsSync('/sys/devices/system/cpu/intel_pstate/no_turbo')) {
+//     createWindow()
+//     // call trayApp function
+//     trayApp()
+//   } else {
+//     errorDialog()
+//   }
+// }) //TODO: Till here
 
 // Definition (Help) dialog
 function helpDialog() {
