@@ -61,7 +61,7 @@ if (localStorage.getItem("cpu_core")) {
   })
 }
 
-// cpu core
+// cpu vendor
 if (localStorage.getItem("cpu_vendor")) {
   document.getElementById("cpu_vendor").innerHTML = localStorage.getItem("cpu_vendor")
 } else {
@@ -80,9 +80,33 @@ if (localStorage.getItem("mem_total")) {
     (total_memory) => {
       var total_memoryInByte = total_memory.total
       var total_memoryInGB = total_memoryInByte / Math.pow(1024, 3)
-      var total = total_memoryInGB.toFixed(0) + " GB"
+      var total = "Total: " + total_memoryInGB.toFixed(0) + " GB"
       localStorage.setItem("mem_total", total)
       document.getElementById("mem_total").innerHTML = localStorage.getItem("mem_total")
+    })
+}
+
+// memory Type
+if (localStorage.getItem("mem_type")) {
+  document.getElementById("mem_type").innerHTML = localStorage.getItem("mem_type")
+} else {
+  sys_info.memLayout().then(
+    (memory_type) => {
+      //console.log(memory_type[0].type);
+      localStorage.setItem("mem_type", memory_type[0].type)
+      document.getElementById("mem_type").innerHTML = localStorage.getItem("mem_type")
+    })
+}
+
+// memory Clock speed
+if (localStorage.getItem("mem_speed")) {
+  document.getElementById("mem_speed").innerHTML = localStorage.getItem("mem_speed")
+} else {
+  sys_info.memLayout().then(
+    (memory_type) => {
+      //console.log(memory_type[0].clockSpeed);
+      localStorage.setItem("mem_speed", memory_type[0].clockSpeed)
+      document.getElementById("mem_speed").innerHTML = localStorage.getItem("mem_speed")
     })
 }
 
