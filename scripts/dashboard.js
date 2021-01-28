@@ -55,7 +55,7 @@ if (localStorage.getItem("cpu_core")) {
   document.getElementById("cpu_core").innerHTML = localStorage.getItem("cpu_core")
 } else {
   sys_info.cpu().then((cpu_core) => {
-    var cpuCore = "Physical Cores: "+ cpu_core.physicalCores
+    var cpuCore = "Physical Cores: " + cpu_core.physicalCores
     localStorage.setItem("cpu_core", cpuCore)
     document.getElementById("cpu_core").innerHTML = localStorage.getItem("cpu_core")
   })
@@ -110,25 +110,32 @@ if (localStorage.getItem("mem_speed")) {
     })
 }
 
+// GPU
+
+sys_info.graphics().then(
+  (GPU) => {
+    for (let i = 0; i < GPU.controllers.length; i++) {
+      document.getElementById("GPU").children[i].innerHTML = GPU.controllers[i].model
+    }
+  })
+
 // Local IP
 if (localStorage.getItem("local_ip")) {
-  document.getElementById("local_ip").innerHTML = localStorage.getItem("local_ip")
+  document.getElementById("local_ip").innerHTML = "Local IP: " + localStorage.getItem("local_ip")
 } else {
   sys_info.networkInterfaces().then((data) => {
     localStorage.setItem("local_ip", data[1].ip4)
-    document.getElementById("local_ip").innerHTML = localStorage.getItem("local_ip")
+    document.getElementById("local_ip").innerHTML = "Local IP: " + localStorage.getItem("local_ip")
   })
 }
 
 // Public IP 
 if (localStorage.getItem("public_ip")) {
-  document.getElementById("public_ip").innerHTML = localStorage.getItem("public_ip")
+  document.getElementById("public_ip").innerHTML = "Public IP: " + localStorage.getItem("public_ip")
 } else {
   const publicIp = require('public-ip');
   publicIp.v4().then((ip_public) => {
     localStorage.setItem("public_ip", ip_public)
-    document.getElementById("public_ip").innerHTML = localStorage.getItem("public_ip")
+    document.getElementById("public_ip").innerHTML = "Public IP: " + localStorage.getItem("public_ip")
   })
 }
-
-

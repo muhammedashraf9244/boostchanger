@@ -89,7 +89,7 @@ function createWindow() {
   // Create the main window.
   mainWindow = new BrowserWindow({
     width: 950,
-    height: 550,
+    height: 530,
     x: windowStateKeeper().x,
     y: windowStateKeeper().y,
     //resizable: false, //TODO for DEV
