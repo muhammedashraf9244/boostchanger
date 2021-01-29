@@ -9,59 +9,76 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="nav">
-            <span class="nav-label">CPU Settings</span>
-            <span class="nav-cpu-mhz">CPU load:&nbsp;<span id="cpu_MHz"></span></span>
-        </div>
+    <div class="grid-container">
         <div class="sidebar">
-            <img class="logo" src="../icon/boostChanger.png" alt="">
-            <ul class="slider-ul">
-                <li><a href="index.html"><img class="icons" src="../icon/tachometer.png"><span
-                            class="slider-label">Dashboard</span></a></li>
-                <li class="active"><a href="#"><img class="icons" src="../icon/zahnrad.png"><span
-                            class="slider-label">CPU
-                            Settings</span></a></li>
-            </ul>
-            <div>
-                <button class="btn" id="close">Close</button>
+            <div class="sideLogo">
+                <img class="logo" src="../icon/boostChanger.png" alt="">
+            </div>
+            <div class="sideMenu">
+                <ul>
+                    <li><a href="index.html"><img class="icons" src="../icon/icons8-armaturenbrett-64.png"></a>
+                    </li>
+                    <li class="active"><a href="#"><img class="icons" src="../icon/icons8-zahnrad-64.png"></a></li>
+                </ul>
             </div>
 
-        </div>
-        <div class="main-CPU">
-            <div class="turbo-container">
-                <span class="turbo-label">Turbo boost</span>
-                <div class="onoffswitch" id="toggle_change">
-                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="turbo_toggle">
-                    <label class="onoffswitch-label" for="turbo_toggle">
-                        <span class="onoffswitch-inner"></span>
-                        <span class="onoffswitch-switch"></span>
-                    </label>
-                </div>
-            </div>
-            <div class="cpu-perf-container">
-                <div class="en-label"><span>Energy Performance:</span><span class="label en-label-badge"
-                        id="bdg"></span></div>
-                <div class="perf">
-                    <button class="btn-perf" type="button" id="btn-save">
-                        <img class="icons-perf" src="../icon/green-energy.png" alt="">
-                        <span>Power Save</span>
-                    </button>
-                    <button class="btn-perf" type="button" id="btn-balance">
-                        <img class="icons-perf" src="../icon/recycle.png" alt="">
-                        <span>Balance</span>
-                    </button>
-                    <button class="btn-perf" type="button" id="btn-perf">
-                        <img class="icons-perf" src="../icon/lighting.png" alt="">
-                        <span>Performance</span>
-                    </button>
-                    <button class="btn-perf" type="button" id="btn-ultra">
-                        <img class="icons-perf" src="../icon/energy.png" alt="">
-                        <span>Ultra</span>
-                    </button>
+            <div class="SideClose">
+                <div class="CloseBtn">
+                    <button class="btn" id="close">Close</button>
                 </div>
             </div>
         </div>
+        <div class="header">
+            <div class="headerLabelLeft">
+                <span class="nav-label">CPU Settings</span>
+            </div>
+            <div class="headerLabelRight"></div>
+        </div>
+        <div class="main-cpu-container">
+            <div class="main-header">
+                <div class="label-energy card">
+                    <span>Energy Performance:</span>
+                    <div class="en-label-badge" id="bdg"></div>
+                </div>
+                <div class="label-temp card"></div>
+                <div class="label-cpuspeed card">
+                    <span class="nav-cpu-mhz">CPU load:&nbsp;<span id="cpu_MHz"></span></span>
+                </div>
+            </div>
+            <div class="main-turbo">
+                <div class="turbo-boost card">
+                    <span class="turbo-label">Turbo boost</span>
+                    <div class="onoffswitch" id="toggle_change">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="turbo_toggle">
+                        <label class="onoffswitch-label" for="turbo_toggle">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="turbo-perf card">
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="100" class="slider" id="myRange">&nbsp;<span>100</span>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="energy-buttons">
+                <button class="btn-perf" type="button" id="btn-ondemand">
+                    <img class="icons-mainContainer-cpu" src="../icon/green-energy.png" alt=""><br>
+                    Power save</button>
+                <button class="btn-perf" type="button" id="btn-balance">
+                    <img class="icons-mainContainer-cpu" src="../icon/recycle.png" alt=""><br>
+                    Balance</button>
+                <button class="btn-perf" type="button" id="btn-perf">
+                    <img class="icons-mainContainer-cpu" src="../icon/lighting.png" alt=""><br>
+                    Performance</button>
+                <button class="btn-perf" type="button" id="btn-ultra">
+                    <img class="icons-mainContainer-cpu" src="../icon/energy.png" alt=""><br>
+                    Ultra</button>
+            </div>
+        </div>
+
     </div>
     <!-- You can also require other files to run in this process -->
     <script>

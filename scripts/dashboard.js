@@ -111,7 +111,6 @@ if (localStorage.getItem("mem_speed")) {
 }
 
 // GPU
-
 sys_info.graphics().then(
   (GPU) => {
     for (let i = 0; i < GPU.controllers.length; i++) {

@@ -88,8 +88,10 @@ function createWindow() {
 
   // Create the main window.
   mainWindow = new BrowserWindow({
-    width: 950,
-    height: 530,
+    minWidth: 950,
+    minHeight: 530,
+    // width: 950,
+    // height: 530,
     x: windowStateKeeper().x,
     y: windowStateKeeper().y,
     //resizable: false, //TODO for DEV
@@ -117,7 +119,7 @@ function createWindow() {
   mainWindow.once('ready-to-show', mainWindow.show)
 
   // TODO: for DEV Open the DevTools. 
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   // clear all local storage data before app starts
   mainWindow.webContents.session.clearStorageData()
