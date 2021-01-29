@@ -10,13 +10,13 @@ closeApp.addEventListener('click', () => {
 })
 
 // Get CPU speed for the first time
-sys_info.cpuCurrentspeed().then((cpu_speed) => {
+sys_info.cpuCurrentSpeed().then((cpu_speed) => {
   var cpu_speedInMHz = cpu_speed.avg * 1000
   document.getElementById('cpu_MHz').innerHTML = cpu_speedInMHz + " MHz";
 })
 // CPU speed with interval
 setInterval(() => {
-  sys_info.cpuCurrentspeed().then((cpu_speed) => {
+  sys_info.cpuCurrentSpeed().then((cpu_speed) => {
     var cpu_speedInMHz = cpu_speed.avg * 1000 //cpu_speed.avg = cpu speed in GHz
     document.getElementById('cpu_MHz').innerHTML = cpu_speedInMHz + " MHz";
   })
@@ -59,36 +59,36 @@ var max_perf = readline.createInterface({
 // function checked which state has no_turbo 0 or 1 when user starts this app. 
 max_perf.on('line', (line) => {
   if (line == 30) {
-    badgeTag.innerHTML = " Power Save";
+    badgeTag.innerHTML = "&nbsp;Power Save";
   } else if (line == 50) {
-    badgeTag.innerHTML = " Balance";
+    badgeTag.innerHTML = "&nbsp;Balance";
   } else if (line == 70) {
-    badgeTag.innerHTML = " Performance";
+    badgeTag.innerHTML = "&nbsp;Performance";
   } else {
-    badgeTag.innerHTML = " Ultra";
+    badgeTag.innerHTML = "&nbsp;Ultra";
   }
 })
 document.getElementById('btn-save').addEventListener('click', () => {
   sudo.exec("echo 30 > /sys/devices/system/cpu/intel_pstate/max_perf_pct", options, (stderr) => {
     if (stderr instanceof Error) { throw stderr; }
-    badgeTag.innerHTML = " Power Save";
+    badgeTag.innerHTML = "&nbsp;Power Save";
   })
 });
 document.getElementById('btn-balance').addEventListener('click', () => {
   sudo.exec("echo 50 > /sys/devices/system/cpu/intel_pstate/max_perf_pct", options, (stderr) => {
     if (stderr instanceof Error) { throw stderr; }
-    badgeTag.innerHTML = " Balance";
+    badgeTag.innerHTML = "&nbsp;Balance";
   })
 });
 document.getElementById('btn-perf').addEventListener('click', () => {
   sudo.exec("echo 70 > /sys/devices/system/cpu/intel_pstate/max_perf_pct", options, (stderr) => {
     if (stderr instanceof Error) { throw stderr; }
-    badgeTag.innerHTML = " Performance";
+    badgeTag.innerHTML = "&nbsp;Performance";
   })
 });
 document.getElementById('btn-ultra').addEventListener('click', () => {
   sudo.exec("echo 100 > /sys/devices/system/cpu/intel_pstate/max_perf_pct", options, (stderr) => {
     if (stderr instanceof Error) { throw stderr; }
-    badgeTag.innerHTML = " Ultra";
+    badgeTag.innerHTML = "&nbsp;Ultra";
   })
 });
