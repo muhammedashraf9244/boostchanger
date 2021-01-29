@@ -22,6 +22,12 @@ setInterval(() => {
   })
 }, 1000)
 
+// CPU Temperature for the first Time
+sys_info.cpuTemperature((cpu_temp) => {
+  console.log(cpu_temp.main);
+  document.getElementById("cpu-temp").innerHTML = "CPU Temperature: " + cpu_temp.main + "&#8451;"
+})
+
 //sudo-prompt needs always options with the name
 var options = {
   name: 'Boost Changer'

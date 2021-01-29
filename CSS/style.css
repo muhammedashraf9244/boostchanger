@@ -199,7 +199,7 @@ li.active { background-color: #6fbe75; }
   border-radius: 5px;
 }
 .label-energy { grid-area: label-energy; display: flex; justify-content: center; align-items: center; }
-.label-temp { grid-area: label-temp; }
+.label-temp { grid-area: label-temp; display: flex; justify-content: center; align-items: center;}
 .label-cpuspeed { grid-area: label-cpuspeed; display: flex; justify-content: center; align-items: center; }
 .main-turbo {
   display: grid;
